@@ -1,0 +1,28 @@
+import Breadcrumb from "./Breadcrumb";
+import { Outlet, Link } from "react-router-dom";
+
+export default function Home() {
+  return (
+    <div className="h-[100dvh] bg-gray-200">
+      <div className="flex flex-col items-center gap-8">
+        <h1 className="text-4xl text-[#2E4053] mt-20 font-bold">
+          My Breadcrumb Component 🍞
+        </h1>
+        <Breadcrumb />
+        
+        {/* El contenido de las rutas se renderiza aquí */}
+        <Outlet />
+
+        {/* Botones de navegación rápida para probar rutas anidadas */}
+        <div className="flex gap-4 p-2 mt-4">
+          <Link to="products" className="rounded-md p-2 bg-[#777] text-white">
+            Products
+          </Link>
+          <Link to="products/1" className="rounded-md p-2 bg-[#777] text-white">
+            Single Product
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
