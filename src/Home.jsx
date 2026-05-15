@@ -1,5 +1,5 @@
 import Breadcrumb from "./Breadcrumb";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -9,18 +9,9 @@ export default function Home() {
           My Breadcrumb Component 🍞
         </h1>
         <Breadcrumb />
-        
-        {/* El contenido de las rutas se renderiza aquí */}
-        <Outlet />
-
-        {/* Botones de navegación rápida para probar rutas anidadas */}
-        <div className="flex gap-4 p-2 mt-4">
-          <Link to="products" className="rounded-md p-2 bg-[#777] text-white">
-            Products
-          </Link>
-          <Link to="products/1" className="rounded-md p-2 bg-[#777] text-white">
-            Single Product
-          </Link>
+        {/* Aquí se renderizan Homepage, Products, About o FAQ */}
+        <div className="mt-4 p-6 bg-white rounded-lg shadow-md w-1/2 text-center">
+          <Outlet />
         </div>
       </div>
     </div>
